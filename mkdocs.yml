@@ -3,9 +3,10 @@ site_url: https://adm.ebu.io
 theme:
   name: 'material'
   custom_dir: custom_theme
-  logo: 'img/ebu_eye.png'
+  logo: 'img/ADM-Logo-1280x640-white-transp.png'
   features:
    - navigation.instant
+   - navigation.footer
 extra_css:
   - 'css/fig_captions.css'
 use_directory_urls: false
@@ -78,12 +79,27 @@ nav:
         - Timing: 'guidelines/reference/excursions/timing.md'
         - Coordinate System: 'guidelines/reference/excursions/coordinate_system.md'
         - Screen-related Content: 'guidelines/reference/excursions/screen_related_content.md'
-  - ADM related standards: 'documents/adm_standards.md'
-  - EBU documents: 'documents/ebu_documents.md'
-  - Test material: 'tech/test_files.md'
-  - Who is using the ADM: 'documents/adm_users.md' 
-  - Webinars: 'documents/webinars.md'
-  - Events: 'admig/events.md'
-  - ADM Implementers Group: 'admig/admig.md'
-  - ADM related software: 'tech/adm_software.md'
-  - Future work: 'admig/future.md'
+  - ADM References & Resources & Software:
+        - ADM related standards: 'documents/adm_standards.md'
+        - EBU documents: 'documents/ebu_documents.md'
+        - ADM related software: 'tech/adm_software.md'
+  - ADM Migration Path:
+        - Overview: 'tech/migration.md'
+        - Step 1 - ADM4Legacy: 'tech/ADM4Legacy-OnDemand.md'
+        - Step 2 - ADM2Legacy: 'tech/ADM2Legacy.md'
+        - Step 3 - ADM4NGA: 'tech/ADM2NGA.md'
+        - ADM Studio: 'tech/ADM_studio.md'
+  - ADM Implementers Group:
+        - About ADM-IG: 'admig/admig.md'
+        - Workplan:
+            - Action Items: 'admig/action_items.md'
+            - Future Work: 'admig/future_work.md'
+        - ADM Plugfests:
+            - 1st Plugfest: 'admig/plugfest1.md'
+            - 2nd Plugfest: 'admig/plugfest2.md'
+        - Webinars: 'documents/webinars.md'
+        - Events:
+            - Past Events: 'admig/past_events.md'
+            - ADM-IG@EBU@IBC2026: 'admig/ibc2026.md'
+            - Future Events: 'admig/future_events.md'
+  - Acknowledgements: 'admig/acknowledgements.md'

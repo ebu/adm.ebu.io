@@ -1,1 +1,4 @@
 site/
+/.bups
+docs/.DS_Store
+.DS_Store
