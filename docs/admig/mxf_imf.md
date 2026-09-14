@@ -16,7 +16,7 @@ For ADM/S-ADM content to be handled effectively, similar details about the conte
 
 It is strongly recommended that for every MXF file containing ADM or S-ADM content:
 
-* The ADM/S-ADM profile(s)/level(s) used are signalled in the MXF Header Metadata
+* The ADM/S-ADM profile(s)/level(s) used are signaled in the MXF Header Metadata
 
 This applies to MXF files in all scenarios: for example, "standalone" files as well as files used as IMF Track Files.
 
@@ -24,7 +24,7 @@ This applies to MXF files in all scenarios: for example, "standalone" files as w
 
 An MXF file signals the ADM Profile(s)/Level(s) used by ADM/S-ADM metadata by providing a list of "Labels" (in the MXF file these are actually 16-byte SMPTE Universal Labels(ULs)).
 
-Each Label is normally chosen from the entries in the SMPTE Metadata Registers (specifically the Labels Register). These Metadata Registers are available at https://registry.smpte-ra.org/ and published periodically as [SMPTE ST 2123](https://pub.smpte.org/doc/st2123/). Suitable Labels Register entries will have a `Kind` of `LEAF` and should have `Applications` set to `ADMProfileLevel`. Each Label can be referred to by using its `Symbol` or by using its `UL`.
+Each Label is normally chosen from the entries in the SMPTE Metadata Registers (specifically the Labels Register). These Metadata Registers are available on the [SMPTE Metadata Registers website](https://registry.smpte-ra.org/) and published periodically as [SMPTE ST 2123](https://pub.smpte.org/doc/st2123/). Suitable Labels Register entries will have a `Kind` of `LEAF` and should have `Applications` set to `ADMProfileLevel`. Each Label can be referred to by using its `Symbol` or by using its `UL`.
 
 For convenience, [a table of suitable Labels is provided](../adm_profiles_levels_table.html).
 
@@ -77,16 +77,17 @@ The approaches to MCA for ADM and for S-ADM are designed to be identical whereve
 
 **Always comply with the MCA provisions of IMF ADM/S-ADM "Operational Mode A" unless there are special requirements. In summary, this means:**
 
-* For each `audioProgramme` element in the ADM/S-ADM, include one `ADMSoundfieldGroupLabelSubDescriptor` (ADM) or one `MGASoundfieldGroupLabelSubDescriptor` (S-ADM)
+* For ADM: include one `ADMSoundfieldGroupLabelSubDescriptor` for each `audioProgramme` element in the ADM
+* For S-ADM: include one `MGASoundfieldGroupLabelSubDescriptor` for each `audioProgramme` element in the S-ADM
 
-**Populate each `ADMSoundfieldGroupLabelSubDescriptor` (ADM) to describe the associated `audioProgramme`, as follows (where all the listed properties shall be present, unless otherwise stated):**
+**ADM: Populate each `ADMSoundfieldGroupLabelSubDescriptor` to describe the associated `audioProgramme` as follows (where all the listed properties shall be present unless otherwise stated):**
 
 | Property (Symbol) | Value or Constraint |
 |---------------|---------------------|
 | `MCALabelDictionaryID` | `urn:smpte:ul:060e2b34.0401010d.03020223.00000000` |
 | `MCATagSymbol` | `ADM` |
 | `MCATagName` | `ADM` |
-| `RFC5646SpokenLanguage` | Equal to the primary spoken language of the `audioProgramme`. Omitted if there is no primary spoken language. Language must be the same as signalled in the ADM metadata (if present), except that language codes will need to be converted (for example, ADM uses "eng" but MCA uses "en"): `RFC5646SpokenLanguage` uses RFC 5646 language tags whereas ADM suggests the use of older ISO 639-1 or -2 codes. |
+| `RFC5646SpokenLanguage` | Equal to the primary spoken language of the `audioProgramme`. Omitted if there is no primary spoken language. Language must be the same as signaled in the ADM metadata (if present), except that language codes will need to be converted (for example, ADM uses "eng" but MCA uses "en"): `RFC5646SpokenLanguage` uses RFC 5646 language tags whereas ADM suggests the use of older ISO 639-1 or -2 codes. |
 | `MCAContent` | Use one the "MCA Content" values defined in [SMPTE ST 377-41](https://pub.smpte.org/doc/st377-41/). Example: `PRM` means "primary programme content" |
 | `MCAUseClass` | Use one the "MCA Use Class" values defined in [SMPTE ST 377-41](https://pub.smpte.org/doc/st377-41/). Example: `FCMP` means "finished composite". Note that per [SMPTE ST 377-41](https://pub.smpte.org/doc/st377-41/), the valid choices for `MCAUseClass` depend on the value of `MCAContent`. |
 | `MCATitle` | Equal to the first `audioProgrammeLabel` sub-element of the `audioProgramme`. If no `audioProgrammeLabel` sub-element is present, then match the `audioProgrammeName` attribute of the `audioProgramme`. |
@@ -96,7 +97,7 @@ The approaches to MCA for ADM and for S-ADM are designed to be identical whereve
 * An example MXF file containing MCA conforming to this Best Practice is [published along with SMPTE ST 2067-204](https://pub.smpte.org/doc/st2067-204/20260527-pub/st2067-204-20260527-pub.zip)
 
 
-**Populate each `MGASoundfieldGroupLabelSubDescriptor` (S-ADM) to describe the associated `audioProgramme`, as follows (where all the listed properties shall be present, unless otherwise stated):**
+**S-ADM: Populate each `MGASoundfieldGroupLabelSubDescriptor` to describe the associated `audioProgramme` as follows (where all the listed properties shall be present unless otherwise stated):**
 
 | Property (Symbol) | Value or Constraint |
 |---------------|---------------------|
