@@ -102,6 +102,7 @@ nav:
         - ADM Plugfests:
             - 1st Plugfest: 'admig/plugfest1.md'
             - 2nd Plugfest: 'admig/plugfest2.md'
+        - MXF & IMF Best Practice: 'admig/mxf_imf.md'
         - Webinars: 'documents/webinars.md'
         - Events:
             - Past Events: 'admig/past_events.md'

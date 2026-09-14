@@ -76,19 +76,14 @@ The steep learning curve lead to clarify previous misconceptions and helped to f
     This process requires the translation of ADM/S-ADM profile definitions into SMPTE ULs.
     SMPTE ULs are available for inspection via the SMPTE Registry tools.
     While this may be an easy task for specialists, the exact correspondence may not be obvious for everyone.
-    Both ADM and S-ADM MXF mappings signal ADM Profile/Level in the same way – it's just that the property used has a different name in each
-    For ADM (ST 2131) it's ADMProfileLevelULBatch in the ADMAudioMetadataSubDescriptor
-    For S-ADM (ST 2127-10) it's SADMProfileLevelULBatch in the SADMAudioMetadataSubDescriptor
-    Action
-    Write-up and publish the advice (above) through the ADM-IG
-    The participants recommend the creation of a simplified lookup table and published through ADM-IG.
+    Action: Write-up and publish the advice (above) through the ADM-IG; the participants recommend the creation of a simplified lookup table and published through ADM-IG.
+    -> ACTION COMPLETED: see [MXF & IMF Best Practice](mxf_imf.md)
 
   - **MXF: Multi-Channel Audio (MCA) labeling approach**
 
     Create one MCA "MGA/ADM Soundfield Group" for each audioProgramme element in the (S-)ADM metadata.
-    The MXF Header Metadata contains a simple summary of the audioProgrammes in the (S-)ADM metadata (with their ADM ID, title/label, and language)
-    MXF Header Metadata contains essential details about the properties of the video (resolution, video codec parameters, etc) and audio (sampling rate, bit depth, etc) etc so that the file can be handled appropriately without access to, and certainly without parsing, the essence.
     Action: Write-up and publish the advice (above) through ADM-IG.
+    -> ACTION COMPLETED: see [MXF & IMF Best Practice](mxf_imf.md)
 
   - **Audio Programme Name & Labels**
 
