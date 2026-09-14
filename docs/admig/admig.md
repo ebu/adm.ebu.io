@@ -30,7 +30,7 @@ Hit the pic.
 
 [<img src="img/EBU-ADM-IG-Site.jpeg">](https://tech.ebu.ch/groups/adm-ig)
 
-By registerting you will be added to th ADM-IG mail-reflector and receive general information and invitations to join our regular workstreams calls.
+By registering you will be added to th ADM-IG mail-reflector and receive general information and invitations to join our regular workstreams calls.
 
 
 You'll be in good company!
