@@ -1,6 +1,5 @@
 # EBU ADM Website
 
-# THIS IS wb's dev branch!
 
 ## Overview
 
