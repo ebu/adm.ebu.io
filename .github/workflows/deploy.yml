@@ -31,6 +31,7 @@ jobs:
 
       - name: Create ADM Profiles and Levels Labels Table
         # If Labels.xml is no longer available, contact SMPTE 30MR for assistance or change to using the latest publication of SMPTE ST 2123 at https://pub.smpte.org/doc/st2123/
+        # This step overwrites adm_profiles_levels_table.html with a file generated from the latest data. A fallback option is to skip this step and just use the (potentially out-of-date) adm_profiles_levels_table.html included in this repo.
         run: |
           sudo apt-get update
           sudo apt-get install xsltproc
