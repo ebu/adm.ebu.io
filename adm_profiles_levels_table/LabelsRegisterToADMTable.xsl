@@ -13,7 +13,7 @@
 					<h1>ADM Profiles and Levels Labels</h1>
 					<p>Generated from the <a href="https://registry.smpte-ra.org/apps/pages/draft/">SMPTE Metadata Labels Register</a>. The table shows all Labels with the "Applications" field set to "ADMProfileLevel" at the point of generation.
 					</p>
-					<p>Refer to <a href="admig/mxf_imf">MXF &amp; IMF Best Practice</a> for guidance on using these Labels.
+					<p>Refer to <a href="./mxf_imf.html">MXF &amp; IMF Best Practice</a> for guidance on using these Labels.
 					</p>
 					<table class="table table-hover table-sm table-resposive">
 						<thead class="table-light">

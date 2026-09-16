@@ -77,7 +77,7 @@ The steep learning curve lead to clarify previous misconceptions and helped to f
     
     Action: Write-up and publish the advice (above) through the ADM-IG; the participants recommend the creation of a simplified lookup table and published through ADM-IG.
     
-    -> ACTION COMPLETED: see [MXF & IMF Best Practice](mxf_imf.md)
+    -> ACTION COMPLETED: see [MXF & IMF Best Practice](../best_practices/mxf_imf.md)
 
   - **MXF: Multi-Channel Audio (MCA) labeling approach**
 
@@ -85,7 +85,7 @@ The steep learning curve lead to clarify previous misconceptions and helped to f
     
     Action: Write-up and publish the advice (above) through ADM-IG.
     
-    -> ACTION COMPLETED: see [MXF & IMF Best Practice](mxf_imf.md)
+    -> ACTION COMPLETED: see [MXF & IMF Best Practice](../best_practices/mxf_imf.md)
 
   - **Audio Programme Name & Labels**
 

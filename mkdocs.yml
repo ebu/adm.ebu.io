@@ -88,6 +88,8 @@ nav:
         - ADM related standards: 'documents/adm_standards.md'
         - EBU documents: 'documents/ebu_documents.md'
         - ADM related software: 'tech/adm_software.md'
+  - ADM Best Practices:
+        - MXF & IMF Best Practice: 'best_practices/mxf_imf.md'
   - ADM Migration Path:
         - Overview: 'tech/migration.md'
         - Step 1 - ADM4Legacy: 'tech/ADM4Legacy-OnDemand.md'
@@ -102,7 +104,6 @@ nav:
         - ADM Plugfests:
             - 1st Plugfest: 'admig/plugfest1.md'
             - 2nd Plugfest: 'admig/plugfest2.md'
-        - MXF & IMF Best Practice: 'admig/mxf_imf.md'
         - Webinars: 'documents/webinars.md'
         - Events:
             - Past Events: 'admig/past_events.md'

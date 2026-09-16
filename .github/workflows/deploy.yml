@@ -35,7 +35,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install xsltproc
           wget https://registry.smpte-ra.org/view/draft/Labels.xml
-          xsltproc -o ./site/adm_profiles_levels_table.html ./adm_profiles_levels_table/LabelsRegisterToADMTable.xsl ./Labels.xml
+          xsltproc -o ./site/best_practices/adm_profiles_levels_table.html ./adm_profiles_levels_table/LabelsRegisterToADMTable.xsl ./Labels.xml
 
       - uses: actions/upload-pages-artifact@v3
         with:

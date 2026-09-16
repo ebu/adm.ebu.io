@@ -26,7 +26,7 @@ An MXF file signals the ADM Profile(s)/Level(s) used by ADM/S-ADM metadata by pr
 
 Each Label is normally chosen from the entries in the SMPTE Metadata Registers (specifically the Labels Register). These Metadata Registers are available on the [SMPTE Metadata Registers website](https://registry.smpte-ra.org/) and published periodically as [SMPTE ST 2123](https://pub.smpte.org/doc/st2123/). Suitable Labels Register entries will have a `Kind` of `LEAF` and should have `Applications` set to `ADMProfileLevel`. Each Label can be referred to by using its `Symbol` or by using its `UL`.
 
-For convenience, [a table of suitable Labels is provided](../adm_profiles_levels_table.html).
+For convenience, [a table of suitable Labels is provided](./adm_profiles_levels_table.html).
 
 Both ADM and S-ADM MXF mappings use the same Labels. However, each MXF mapping stores the list of Labels in a different property:
 
@@ -40,15 +40,15 @@ Both ADM and S-ADM MXF mappings use the same Labels. However, each MXF mapping s
 **If the ADM/S-ADM contains the `profileList` element:**
 
 * In the MXF signaling, use one Label for each `profile` sub-element of the ADM `profileList` element
-* Choose the suitable Labels from [this table of Labels](../adm_profiles_levels_table.html)
+* Choose the suitable Labels from [this table of Labels](./adm_profiles_levels_table.html)
 
 **Otherwise, if the ADM/S-ADM conforms to a defined Profile and Level but the ADM/S-ADM does not contain the `profileList` element:**
 
-* Choose one or more suitable Labels from [this table of Labels](../adm_profiles_levels_table.html) in line with any guidance provided by the publisher of the ADM/S-ADM Profile
+* Choose one or more suitable Labels from [this table of Labels](./adm_profiles_levels_table.html) in line with any guidance provided by the publisher of the ADM/S-ADM Profile
 
 **Finally, if the ADM/S-ADM is just "generic" ADM/S-ADM and is not constrained by any defined Profile or Level:**
 
-* Use [the Label with the Symbol `ADM_ITU2076`](../adm_profiles_levels_table.html)
+* Use [the Label with the Symbol `ADM_ITU2076`](./adm_profiles_levels_table.html)
 * This is a "dummy" value signaling that the ADM/S-ADM has not been created in line with any defined Profile or Level
 * This Label refers to [ITU-R BS.2076](https://www.itu.int/rec/R-REC-BS.2076/) in general rather than a specific version of it. Therefore, this Label is not for signaling which version of ITU-R BS.2076 is being used by the ADM/S-ADM metadata.
 * Use the Label with the Symbol `ADM_ITU2076` in this scenario only. Never use this Label along with another Label.
