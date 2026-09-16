@@ -90,6 +90,7 @@ nav:
         - ADM related software: 'tech/adm_software.md'
   - ADM Best Practices:
         - MXF & IMF Best Practice: 'best_practices/mxf_imf.md'
+        - ADM Profiles & Levels Labels: 'best_practices/adm_profiles_levels_table.html'
   - ADM Migration Path:
         - Overview: 'tech/migration.md'
         - Step 1 - ADM4Legacy: 'tech/ADM4Legacy-OnDemand.md'
