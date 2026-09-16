@@ -84,7 +84,7 @@ nav:
         - Timing: 'guidelines/reference/excursions/timing.md'
         - Coordinate System: 'guidelines/reference/excursions/coordinate_system.md'
         - Screen-related Content: 'guidelines/reference/excursions/screen_related_content.md'
-  - ADM References & Resources & Software:
+  - ADM Documents & Software:
         - ADM related standards: 'documents/adm_standards.md'
         - EBU documents: 'documents/ebu_documents.md'
         - ADM related software: 'tech/adm_software.md'
