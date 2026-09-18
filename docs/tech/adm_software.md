@@ -1,7 +1,7 @@
 # ADM Related Software
 
 
-## EBU provided resouces
+## EBU provided resources
 
 ### ADM Code Libraries
 
@@ -38,19 +38,19 @@
    → Python script for generating the [ADM Common Definitions](https://www.itu.int/rec/R-REC-BS.2094/en) XML file.
      This repo contains also a specific .xsd: https://github.com/bbc/adm_common_def_gen/blob/main/data/adm_v3_itu.xsd
 
-## Wrapping ADM in MXF
+## Wrapping ADM in MXF and IMF
 
 * [**BMX tool for MXF**](https://github.com/ebu/bmx)    
   → Formerly developed by [BBC R&D](https://github.com/bbc/bmx)
-  →Open Source - the 'Swiss Army Knife' for MXF in broadcast workflows
-  → allows to wrap ADM [SMPTE ST2067-204](https://pub.smpte.org/doc/st2067-204/) for IMF [SMPT ST2067-70](https://pub.smpte.org/doc/st2067-70/) and [SMPTE ST2131](https://pub.smpte.org/doc/st2131/)
+  → Open Source - the 'Swiss Army Knife' for MXF in broadcast workflows
+  → allows to wrap ADM [SMPTE ST 2067-204](https://pub.smpte.org/doc/st2067-204/) (for IMF [SMPTE ST 2067](https://www.smpte.org/standards/st2067)) and [SMPTE ST 2131](https://pub.smpte.org/doc/st2131/) (for MXF)
 
 * [**Dolby Repo muxer**](https://github.com/DolbyLaboratories/repo-muxer)    
    → is a fork from an earlier version of  https://github.com/bbc/bmx that implemented muxing S-ADM (Dolby Repository File)    
    → A merge into the main EBU-bmx repo is projected.
 
 * [**IMF Tool**](https://github.com/IMFTool/IMFTool)    
-   → Open Source reference tool for applying MGA S-ADM [SMPTE ST2067-203](https://pub.smpte.org/doc/st2067-203/) and ADM Audio [SMPTE ST2067-204](https://pub.smpte.org/doc/st2067-204/) in IMF [SMPT ST2067-70](https://pub.smpte.org/doc/st2067-70/)
+   → Open Source reference tool for applying MGA S-ADM [SMPTE ST 2067-203](https://pub.smpte.org/doc/st2067-203/) and ADM Audio [SMPTE ST 2067-204](https://pub.smpte.org/doc/st2067-204/) in IMF [SMPTE ST 2067](https://www.smpte.org/standards/st2067)
 
 
 
@@ -67,7 +67,7 @@
 * [**Dolby FM41 Player**](https://github.com/DolbyLaboratories/fm-41-player)            
    → 'fm-41-player' is a C++ command-line transmitter for SMPTE ST 2110-41 fast metadata. This player supports two payloads or modes of operation:
        - Serialized ADM (S-ADM) as per SMPTE ST 2127-2
-       - ISXD: Mapping document is stil in draft but the reserved DIT of 0x101 is used. The selected mode of operation is inferred by the supplied input XML file
+       - ISXD: Mapping document is still in draft but the reserved DIT of 0x101 is used. The selected mode of operation is inferred by the supplied input XML file
 
 * [**Dolby Audio Metadata (AM) Viewer**](https://github.com/DolbyLaboratories/AM-Viewer)    
    → Python based realtime viewer for Serialized ADM inside a SMPTE ST 2110 container.     
@@ -113,7 +113,7 @@
    → Vast compatibility with present ADM implementation and workflows
 
 * [**MPEG-H Decoder Software**](https://github.com/Fraunhofer-IIS/mpeghdec)
-   → Publicly accessible repo to build a MPEG-H NGA codec decoder that resebles many ADM-typical object-based features. Licensing applies.
+   → Publicly accessible repo to build a MPEG-H NGA codec decoder that resembles many ADM-typical object-based features. Licensing applies.
 The repo [MPEG-H & ADM Test Content](https://github.com/Fraunhofer-IIS/mpegh-test-content) contains sample MPEG-H streams to check its functionality.
 
 **-> The *MPEG-H Authoring Tool* is included in all major DAW and therefore enables ADM authoring according to the [*MPEG-H ADM Profile*](https://www.iis.fraunhofer.de/en/ff/amm/dl/whitepapers/adm-profile.html)**
@@ -126,7 +126,7 @@ The repo [MPEG-H & ADM Test Content](https://github.com/Fraunhofer-IIS/mpegh-tes
 ### ADM OSC
 
 * [**ADM OSC**](https://github.com/immersive-audio-live/ADM-OSC)    
-   -> joint Open Source project to apply ADM for live equipment, intitiated by Radio France, FLUX and L-Acoustics, supported by d&b, Dolby, Lawo, Merging Tecnologies, Steinberg and others. 
+   -> joint Open Source project to apply ADM for live equipment, initiated by Radio France, FLUX and L-Acoustics, supported by d&b, Dolby, Lawo, Merging Tecnologies, Steinberg and others.
 
 
 
@@ -141,7 +141,7 @@ The repo [MPEG-H & ADM Test Content](https://github.com/Fraunhofer-IIS/mpegh-tes
    -> This tool allows to individually define constraints for conformance checks of delivery specifications. You may adapt this for your specific ADM requirements
 
 * [**QCTools**](https://mediaarea.net/QCTools)    
-   -> A multi-purpose quality controll app for AV assets
+   -> A multi-purpose quality control app for AV assets
 
 * [**BWF MetaEdit**](https://mediaarea.net/BWFMetaEdit)    
    -> Standard tool to parse and edit BWF contained metadata (BW64 pending). It also supports display, editing and export of ADM's <axml\> chunk (<chna\> is retained only)     
@@ -150,10 +150,13 @@ The repo [MPEG-H & ADM Test Content](https://github.com/Fraunhofer-IIS/mpegh-tes
 
 
 ### SMPTE
-* [**Online Reg-XML MXF Dump Tool**](https://registry.smpte-ra.org/apps/regxmldump/view/development/)    
-   USER: smpte    
-   PASSWORD: smpte
-   -> Universal tool to parse MXF header metadata. Given that ADM is wrapped properly into MXF (profile signalling, MCA labelling etc.), its key specs will be containd here, too.
+* [**Online Reg-XML MXF Dump Tool**](https://registry.smpte-ra.org/apps/regxmldump/view/draft/)    
+   -> Universal tool to parse MXF header metadata. Given that ADM is wrapped properly into MXF (profile signalling, MCA labelling etc.), its key specs will be contained here, too.
+
+### Netflix
+* [**Photon**](https://github.com/netflix/photon)
+   -> A tool for parsing, interpreting and validating IMF Packages including support for the S-ADM Plug-in [ST 2067-203](https://pub.smpte.org/doc/st2067-203/)
+
 
 ### MYRIADBITS
 

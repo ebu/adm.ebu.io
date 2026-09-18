@@ -7,6 +7,11 @@ theme:
   features:
    - navigation.instant
    - navigation.footer
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ebu/adm.ebu.io
+      name: GitHub repository for website source
 extra_css:
   - 'css/fig_captions.css'
 use_directory_urls: false
@@ -79,10 +84,13 @@ nav:
         - Timing: 'guidelines/reference/excursions/timing.md'
         - Coordinate System: 'guidelines/reference/excursions/coordinate_system.md'
         - Screen-related Content: 'guidelines/reference/excursions/screen_related_content.md'
-  - ADM References & Resources & Software:
+  - ADM Documents & Software:
         - ADM related standards: 'documents/adm_standards.md'
         - EBU documents: 'documents/ebu_documents.md'
         - ADM related software: 'tech/adm_software.md'
+  - ADM Best Practices:
+        - MXF & IMF Best Practice: 'best_practices/mxf_imf.md'
+        - ADM Profiles & Levels Labels: 'best_practices/adm_profiles_levels_table.html'
   - ADM Migration Path:
         - Overview: 'tech/migration.md'
         - Step 1 - ADM4Legacy: 'tech/ADM4Legacy-OnDemand.md'

@@ -3,7 +3,7 @@
 
 ## Overview
 
-This repository hosts the "EBU ADM Website", which contains the EBU's ADM homepate, and other
+This repository hosts the ["EBU ADM Website"](https://adm.ebu.io/), which contains the EBU's ADM homepage, and other
 related pages including the ADM guidelines.
 
 ## Generate

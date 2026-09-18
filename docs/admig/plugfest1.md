@@ -63,8 +63,6 @@ The plugfest aimed at testing the capability of a participant's tool(s) to handl
 - ADM & S-ADM metadata generation    
 - Phase A constraints on ADM & S-ADM (e.g. loudness metadata, dialogue kind, etc)
 
-
-
 ## CONCLUSIONS
 
 Over a period of four weeks, some 400 files were created, exchanged, tested and evaluated by participating partners in weekly review sessions.    
@@ -76,28 +74,29 @@ The steep learning curve lead to clarify previous misconceptions and helped to f
     This process requires the translation of ADM/S-ADM profile definitions into SMPTE ULs.
     SMPTE ULs are available for inspection via the SMPTE Registry tools.
     While this may be an easy task for specialists, the exact correspondence may not be obvious for everyone.
-    Both ADM and S-ADM MXF mappings signal ADM Profile/Level in the same way – it's just that the property used has a different name in each
-    For ADM (ST 2131) it's ADMProfileLevelULBatch in the ADMAudioMetadataSubDescriptor
-    For S-ADM (ST 2127-10) it's SADMProfileLevelULBatch in the SADMAudioMetadataSubDescriptor
-    Action
-    Write-up and publish the advice (above) through the ADM-IG
-    The participants recommend the creation of a simplified lookup table and published through ADM-IG.
+    
+    Action: Write-up and publish the advice (above) through the ADM-IG; the participants recommend the creation of a simplified lookup table and published through ADM-IG.
+    
+    -> ACTION COMPLETED: see [MXF & IMF Best Practice](../best_practices/mxf_imf.md)
 
   - **MXF: Multi-Channel Audio (MCA) labeling approach**
 
     Create one MCA "MGA/ADM Soundfield Group" for each audioProgramme element in the (S-)ADM metadata.
-    The MXF Header Metadata contains a simple summary of the audioProgrammes in the (S-)ADM metadata (with their ADM ID, title/label, and language)
-    MXF Header Metadata contains essential details about the properties of the video (resolution, video codec parameters, etc) and audio (sampling rate, bit depth, etc) etc so that the file can be handled appropriately without access to, and certainly without parsing, the essence.
+    
     Action: Write-up and publish the advice (above) through ADM-IG.
+    
+    -> ACTION COMPLETED: see [MXF & IMF Best Practice](../best_practices/mxf_imf.md)
 
   - **Audio Programme Name & Labels**
 
     Audio programme labels are optional. They are typically used by downstream encoders to produce selectable configurations for consumer devices where the programme name can be localised.
     Audio programme names are typically used by professional tools only and do not reach the consumer devices, unless audio programme labels are absent.
     It is expected that the audio programme names are unique in the ADM/S-ADM metadata, although they are not strictly speaking used by the ADM renderer to influence processing.
+    
     The group recommends the verification of audio programme uniqueness and it enforcement during ADM metadata creation. A QC test should be defined to detect violations of this recommendation.
 
   - **Dialogue Content Kind**
     [ITU-R BS.2076-3](https://www.itu.int/rec/R-REC-BS.2076), section 5.7.3, table A1-35 defines a number of possible combinations for the attributes and value of the dialogue element. Some combinations are similar but not duplicates.
     However in the definition of delivery specifications, it is not always obvious to the reader which combinations must be selected (e.g. for audio description).
+    
     It is highly desirable to define the preferred combinations for practical use cases and include the recommended combinations in delivery specifications to avoid content rejection during ingest or QC failure.
