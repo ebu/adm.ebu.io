@@ -2,7 +2,7 @@
 
 ## ADM & S-ADM in MXF & IMF
 
-[Standards](../documents/adm_standards.md) and [software](../tech/adm_software.md) exist for supporting ADM & S-ADM metadata (along with audio) in MXF files and IMF Packages. Note that IMF Packages use MXF files to hold their essence and related technical metadata.
+[Standards](../documents/reference_documentation.md) and [software](../tech/adm_software.md) exist for supporting ADM & S-ADM metadata (along with audio) in MXF files and IMF Packages. Note that IMF Packages use MXF files to hold their essence and related technical metadata.
 
 ## Importance of ADM/S-ADM signaling in MXF Header Metadata
 
