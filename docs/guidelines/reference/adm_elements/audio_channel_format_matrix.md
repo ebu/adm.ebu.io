@@ -108,15 +108,22 @@ are defined for the `audioBlockFormat` with
 
 #### matrix sub-elements
 
-| Sub-element	| Attribute	| Description |	Units | Example | Quantity | Default |
-|-------------|-----------|-------------|-------|---------|----------|---------|
-| coefficient	| gain      | Multiplication factor of another channel. Constant value. Type: float	| Linear gain value* | −0.5 | 0...* | 1.0 |
-| coefficient	| gainVar   | Multiplication factor of another channel. Variable. Type: string (reference to float)  | Linear gain value  | clev | 0...* | - |
-| coefficient | phase     | Phase shift of another channel. Constant value. Type: float | Degrees | 90 | 0...* | 0.0 |
-| coefficient | phaseVar  | Phase shift of another channel. Variable. Type: string (reference to float) | Degrees | ph | 0...* | - |
-| coefficient | delay     | Time delay of another channel. Constant value Type: float	ms (float) | 10.5 | 0.0 | 0...* | 0.0 |
-| coefficient | delayVar  | Time delay of another channel. Variable Type: string (reference to float) | ms (float) | del | 0...* | - |
-| coefficient | - | Reference to other channel definition | - | AC_00010001 | 1...* | - |
+| Sub-element	| Description | Example | Quantity |
+|-------------|-------------|---------|----------|
+| [coefficient](#coefficient) | Reference to other channel definition. The attributes define the type and value of the coefficient. | AC_00010001 | 1...* |
+
+#### coefficient
+
+| Attribute	| Description |	Units | Example | Required | Default |
+|-----------|-------------|-------|---------|----------|---------|
+| gain      | Multiplication factor of another channel. Constant value. Type: float	| Linear gain value* | −0.5 | No* | 1.0 |
+| gainVar   | Multiplication factor of another channel. Variable. Type: string (reference to float)  | Linear gain value  | clev | No* | - |
+| phase     | Phase shift of another channel. Constant value. Type: float | Degrees | 90 | No* | 0.0 |
+| phaseVar  | Phase shift of another channel. Variable. Type: string (reference to float) | Degrees | ph | No* | - |
+| delay     | Time delay of another channel. Constant value Type: float	ms (float) | 10.5 | 0.0 | No* | 0.0 |
+| delayVar  | Time delay of another channel. Variable Type: string (reference to float) | ms (float) | del | No* | - |
+
+*At least one of these attributes must be used. 
 
 **Note 1:** No more than one use of each attribute can be specified.<br />
 **Note 2:** A negative gain value implies an inversion of the signal.
