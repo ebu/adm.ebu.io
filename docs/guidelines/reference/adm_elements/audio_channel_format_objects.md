@@ -66,7 +66,7 @@ Some of the sub-elements depend upon whether polar or Cartesian coordinates are 
 | [objectDivergence](#objectdivergence) | Adjusts the balance between the object’s specified position and two other positions specified by the azimuthRange value (symmetrical on both sides of the object at the object’s position +/– azimuthRange). A value of 0 for the objectDivergence means no divergence. | 0.5 | 0 or 1 | 0.0 | 
 | [zoneExclusion](#zoneexclusion) | Indicates which speaker/room zones the object should not be rendered through. |  | 0 or 1 | |
 | cartesian   | Specifies coordinate system, if the flag is set to 1 the Cartesian coordinates and otherwise spherical coordinates are used. | 1 | 0 or 1 | 0 |
-| diffuse     |  Describes the diffuseness of an audioObject (if it is diffuse or direct sound) | 0.5 | 0 or 1 | 0.0 |
+| [diffuse](parameters/diffuse.md)     |  Describes the diffuseness of an audioObject (if it is diffuse or direct sound) | 0.5 | 0 or 1 | 0.0 |
 | [channelLock](#channellock) | If set to 1 a renderer can lock the object to the nearest channel or speaker, rather than normal rendering. If one or more speakers exist in the defined sphere or on its surface, the object snaps to the nearest speaker. | 1 | 0 or 1 | 0 |
 | screenRef | Indicates whether the object is screen-related (flag is equal to 1) or not (flag is equal to 0) | 1 | 0 or 1 | 0 |
 
@@ -90,6 +90,8 @@ Some of the sub-elements depend upon whether polar or Cartesian coordinates are 
 
 #### objectDivergence
 
+More details about the `objectDivergence` parameter [here](parameters/object_divergence.md).
+
 ##### For polar coordinates 
 
 | Attribute	| Value	| Description | Required | Units | Default | 
@@ -103,6 +105,8 @@ Some of the sub-elements depend upon whether polar or Cartesian coordinates are 
 | positionRange | distance | Distance of divergence | No | Relative distance (0 to 1.0) | 0.0 |
 
 #### zoneExclusion
+
+More details about the `zoneExclusion` parameter [here](parameters/zone_exclusion.md).
 
 ##### For polar coordinates 
 
@@ -139,6 +143,8 @@ Some of the sub-elements depend upon whether polar or Cartesian coordinates are 
 | maxZ | Maximum Z | Yes | Relative distance | |
 
 #### channelLock
+
+More details about the `channelLock` parameter [here](parameters/channel_lock.md).
 
 | Attribute	| Description | Required | Units | Default | 
 |-----------|-------------|----------|-------|---------|

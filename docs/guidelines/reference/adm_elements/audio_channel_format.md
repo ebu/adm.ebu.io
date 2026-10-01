@@ -62,18 +62,22 @@ The sub-elements within `audioBlockFormat` depend upon the [`typeDefinition/type
 | Sub-element      | Description       | Example | Quantity | Default |
 |------------------|-------------------|---------|----------|---------|
 | [gain](#gain) | Gain value  | 0.5 | 1...* | 0 or 1 | 1.0 |
-| importance | Importance of the audioChannelFormat for the duration of the block. An integer in the range 0 to 10 | 4 | 0 or 1 | 10 |
+| [importance](parameters/importance.md) | Importance of the audioChannelFormat for the duration of the block. An integer in the range 0 to 10 | 4 | 0 or 1 | 10 |
 | [jumpPosition](#jumpposition) | Determines whether the time-variant parameters are interpolated over the duration of the block (set to 0), or change over a shorter period (including immediately) (set to 1). | 1 | 0 or 1 | 0 |  
 | headLocked | Indicates if the perceived location of the audio element is locked to the head (flag = 1) or not locked (flag = 0) | 1 | 0 or 1 | 0 |
 | [headphoneVirtualise](#headphonevirtualise) | Headphone virtualiser parameters. | 1 | 0 or 1 | 0 |
 
 #### gain
 
+More details about the `gain` parameter [here](parameters/gain.md)
+
 | Attribute	| Description |	Example	| Required | Default |
 |-----------|-------------|---------|----------|---------|
 | gainUnit | Defines the unit of gain, either 'linear' or 'dB'.	| 'dB' | No | 'linear' |
 
 #### jumpPosition
+
+More details about the `jumpPosition` parameter [here](parameters/jump_position.md)
 
 | Attribute	| Description |	Example	| Required | Default |
 |-----------|-------------|---------|----------|---------|
