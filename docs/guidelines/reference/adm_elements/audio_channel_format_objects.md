@@ -67,10 +67,12 @@ Some of the sub-elements depend upon whether polar or Cartesian coordinates are 
 | [zoneExclusion](#zoneexclusion) | Indicates which speaker/room zones the object should not be rendered through. |  | 0 or 1 | |
 | cartesian   | Specifies coordinate system, if the flag is set to 1 the Cartesian coordinates and otherwise spherical coordinates are used. | 1 | 0 or 1 | 0 |
 | diffuse     |  Describes the diffuseness of an audioObject (if it is diffuse or direct sound) | 0.5 | 0 or 1 | 0.0 |
-| [channelLock](#channelLock) | If set to 1 a renderer can lock the object to the nearest channel or speaker, rather than normal rendering. If one or more speakers exist in the defined sphere or on its surface, the object snaps to the nearest speaker. | 1 | 0 or 1 | 0 |
+| [channelLock](#channellock) | If set to 1 a renderer can lock the object to the nearest channel or speaker, rather than normal rendering. If one or more speakers exist in the defined sphere or on its surface, the object snaps to the nearest speaker. | 1 | 0 or 1 | 0 |
 | screenRef | Indicates whether the object is screen-related (flag is equal to 1) or not (flag is equal to 0) | 1 | 0 or 1 | 0 |
 
-#### position (for polar coordinates)
+#### position
+
+##### For polar coordinates 
 
 | Attribute	| Value	| Description | Required | Units for position sub-element value |
 |-----------|-------|-------------|----------|--------------------------------|
@@ -78,7 +80,7 @@ Some of the sub-elements depend upon whether polar or Cartesian coordinates are 
 | coordinate | elevation | Defining the elevation of sound location | No | Degrees |
 | coordinate | distance | Defining the distance of sound location | No | Normalised to 1 |
 
-#### position (for Cartesian coordinates)
+##### For Cartesian coordinates
 
 | Attribute	| Value	| Description | Required | Units for position sub-element value |
 |-----------|-------|-------------|----------|--------------------------------|
@@ -86,25 +88,37 @@ Some of the sub-elements depend upon whether polar or Cartesian coordinates are 
 | coordinate | Y | Defining the Y axis of sound location | Yes | Relative units |
 | coordinate | Z | Defining the Z axis of sound location | No | Relative units |
 
-#### objectDivergence (for polar coordinates)
+#### objectDivergence
+
+##### For polar coordinates 
 
 | Attribute	| Value	| Description | Required | Units | Default | 
 |-----------|-------|-------------|----------|-------|---------|
 | azimiuthRange | angle | Azimuth angle of divergence. | No | Degrees (0 to 180.0) | 45.0 |
 
-#### objectDivergence (for Cartesian coordinates)
+##### For Cartesian coordinates
 
 | Attribute	| Value	| Description | Required | Units | Default | 
 |-----------|-------|-------------|----------|-------|---------|
 | positionRange | distance | Distance of divergence | No | Relative distance (0 to 1.0) | 0.0 |
 
-#### zoneExclusion (for polar coordinates)
+#### zoneExclusion
+
+##### For polar coordinates 
 
 | Sub-element | Description                       | Example | Quantity | Default |
 |-------------|-----------------------------------|---------|----------|---------|
 | zone        | Specifies the circular projection onto the sphere for spherical coordinates. Multiple zone elements can be used to specify more complex exclusion shapes. | | 1...* | | 
 
-##### zone (for polar coordinates)
+##### For Cartesian coordinates
+
+| Sub-element | Description                       | Example | Quantity | Default |
+|-------------|-----------------------------------|---------|----------|---------|
+| zone        | Specifies the corner points of a cuboid in the 3D space that will be excluded from rendering for Cartesian coordinates. Multiple zone elements can be used to specify more complex exclusion shapes. | | 1...* | |
+
+##### zone
+
+##### For polar coordinates 
 
 | Attribute	| Description | Required | Units | Default | 
 |-----------|-------------|----------|-------|---------|
@@ -113,13 +127,7 @@ Some of the sub-elements depend upon whether polar or Cartesian coordinates are 
 | minElevation | Minimum elevation | Yes | Degrees | |
 | maxElevation | Maximum elevation | Yes | Degrees | |
 
-#### zoneExclusion (for Cartesian coordinates)
-
-| Sub-element | Description                       | Example | Quantity | Default |
-|-------------|-----------------------------------|---------|----------|---------|
-| zone        | Specifies the corner points of a cuboid in the 3D space that will be excluded from rendering for Cartesian coordinates. Multiple zone elements can be used to specify more complex exclusion shapes. | | 1...* | |
-
-##### zone (for Cartesian coordinates)
+##### For Cartesian coordinates
 
 | Attribute	| Description | Required | Units | Default | 
 |-----------|-------------|----------|-------|---------|

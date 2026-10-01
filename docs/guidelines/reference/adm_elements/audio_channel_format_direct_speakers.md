@@ -48,7 +48,9 @@ In addition to the common [`audioBlockFormat` attributes](audio_channel_format.m
 | cartesian | Specifies coordinate system, if the flag is set to 1 the Cartesian coordinate system is used, otherwise spherical coordinates are used. Default of 0 (spherical) | 1 | 0 or 1 |
 | [position](#position) | Location of sound | −30.0 | 1...6 |
 
-#### position (Spherical coordinates)
+#### position
+
+##### For polar coordinates 
 
 | Attribute	| Value	| Description | Required | Units for position sub-element value |
 |-----------|-------|-------------|----------|--------------------------------|
@@ -65,7 +67,7 @@ If no `bound` attribute is used the the position is the exact value specified.
 
 The distance measure is normalised, as absolute speaker distances from the origin are rarely used, but an absolute reference distance is available in `audioPackFormat`.
 
-#### position (Cartesian coordinates)
+##### For Cartesian coordinates 
 
 | Attribute	| Value	| Description | Required | Units for position sub-element value |
 |-----------|-------|-------------|----------|--------------------------------|
@@ -82,7 +84,7 @@ If no `bound` attribute is used the the position is the exact value specified.
 
 #### screenEdgeLock attribute
 
-The `screenEdgeLock` attribute allows a speaker to be positioned on the edge of the screen. The attribute can be used in combination with the coordinate=“elevation” and/or the coordinate=“azimuth” attribute and it is set to a string stating at which edge of the screen to the speaker position should be assumed to be (if screen-size information is available), so it is either “left”, “right”, “top”, “bottom”. The coordinate attribute must still be included so it is clear which dimension is being set, and to provide an alternative position should the screen not exist or no screen-size information be available.
+The `screenEdgeLock` attribute allows a speaker to be positioned on the edge of the screen. The attribute can be used in combination with the `coordinate=“elevation”` and/or the `coordinate=“azimuth”` attribute and it is set to a string stating at which edge of the screen to the speaker position should be assumed to be (if screen-size information is available), so it is either “left”, “right”, “top”, “bottom”. The `coordinate` attribute must still be included so it is clear which dimension is being set, and to provide an alternative position should the screen not exist or no screen-size information be available.
 
 The example XML code below illustrates how a speaker positioned on the right edge of the screen can be defined (with an alternative position of −29.0 degrees should the screen not exist).
 

@@ -85,7 +85,7 @@ The `audioComplementaryObjectIDRef` element contains a reference to another `aud
 
 To avoid cross-references between `audioComplementaryObjectIDRef`s of several `audioObject`s, the `audioComplementaryObjectIDRef` sub-element should only be included in one corresponding parent `audioObject` for each set of mutually exclusive contents. The parent `audioObject` with the `audioComplementaryObjectIDRef`s should be the one that contains the default version of the set of mutually exclusive objects.
 
-### audioObjectInteraction sub-element
+### audioObjectInteraction
 
 An `audioObjectInteraction` element describes any possible user interaction with the corresponding parent `audioObject`. It should be present only if the `interact` attribute of the parent `audioObject` is set to 1. In case the “Interact” attribute of the parent `audioObject` is set to 0, any `audioObjectInteraction` element should be ignored. The `audioObjectInteraction` element has the following attributes and sub-elements.
 
