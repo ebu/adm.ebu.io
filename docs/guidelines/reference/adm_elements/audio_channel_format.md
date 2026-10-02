@@ -18,20 +18,26 @@ The types of `audioChannelFormat`s are:
 |----------------------|-----------------------------|----------|----------|
 | audioChannelFormatName | Name of the channel | FrontLeft | Yes |
 | audioChannelFormatID | ID of the channel. The yyyy digits of AC_yyyyxxxx_represent the type of audio contained in the channel. The xxxx digits should match the audioStreamFormat xxxx digits. | AC_00010001 | Yes |
-| typeLabel | Descriptor of the type of channel | 0001 | Optional |
-| typeDefinition | Description of the type of channel | DirectSpeakers | Optional |
+| typeLabel | Descriptor of the type of channel | 0001 | No* |
+| typeDefinition | Description of the type of channel | DirectSpeakers | No* |
 
 
-\*	At least one of `typeLabel` or `typeDefinition` is required.
+\*At least one of `typeLabel` or `typeDefinition` is required.
 
-The typeDefinition of the `audioChannelFormat` specifies the type of audio it is describing, and also determines which parameters are used within its `audioBlockFormat` children.
+The `typeDefinition` of the `audioChannelFormat` specifies the type of audio it is describing, and also determines which parameters are used within its `audioBlockFormat` children.
 
 ## Common Sub-elements
 
-| Sub-element      | Description                                                | Attributes | Quantity |
-|------------------|------------------------------------------------------------|------------|----------|
-| audioBlockFormat | Time division of channel containing dynamic metadata  | |	1...* |
-| frequency | Sets a high or low cut-off frequency for the audio in Hz | typeDefinition = “lowPass" or “highPass" |	0...2 |
+| Sub-element      | Description | Example | Quantity |
+|------------------|-------------|---------|----------|
+| [audioBlockFormat](#audioblockformat) | Time division of channel containing dynamic metadata  | |	1...* |
+| [frequency](#frequency) | Sets a high or low cut-off frequency for the audio in Hz | 120 |	0...2 |
+
+### frequency
+
+| Attribute	| Description |	Example	| Required |
+|-----------|-------------|---------|----------|
+| typeDefinition | Set to either "lowPass" or "highPass" to define type of cut-off	| "lowPass" | Yes |
 
 ## audioBlockFormat
 
