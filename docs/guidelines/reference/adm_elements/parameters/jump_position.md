@@ -1,6 +1,6 @@
 # jumpPosition and interpolationLength
 
-The `jumpPosition` parameter appears in [`audioBlockFormat`](../audio_channel_format_objects.md#audioblockformat) only for the 'Objects' typeDefinition.
+The `jumpPosition` parameter appears in [`audioBlockFormat`](../audio_channel_format_objects.md#audioblockformat) for all typeDefinitions.
 
 If the `jumpPosition` flag is set to 0 then the renderer will interpolate a moving object between positions over the full duration of the block. If it is set to 1 it will jump to the new position instantly. If the `interpolationLength` attribute is used when jumpPosition is 1, then the interpolation period is set to the `interpolationLength` value. The `interpolationLength` should be no longer than the block’s duration.
 
@@ -26,7 +26,7 @@ The fourth example in the figure below shows how zero length blocks can be used 
 
 To ensure undefined behaviour of the first block is avoided, then the position specified in the first block covers the entire length of the block (regardless of the `jumpPosition` and `interpolationLength` properties).
 
-The following parameters can be interpolated: `position`, `width`, `height`, `depth`, `diffuse`, `gain`, and `objectDivergence`.
+The following parameters can be interpolated: `position`, `width`, `height`, `depth`, `diffuse`, `gain`, and `objectDivergence` (including `azimuthRange` and `positionRange`) for typeDefinition of "Objects", `gain` attribute of `coefficient` sub-element of `matrix` sub-element for typeDefinition of "Matrix", `gain` for all typeDefinitions.
 
 The other parameters in `audioBlockFormat` should not be interpolated and should remain constant for the duration of the block.
 
