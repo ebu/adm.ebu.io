@@ -57,129 +57,96 @@ In addition to the common [`audioBlockFormat` attributes](audio_channel_format.m
 
 Some of the sub-elements depend upon whether polar or Cartesian coordinates are used, while some are common to both systems.
 
-#### For polar coordinates
+| Sub-element | Description                       | Example | Quantity | Default |
+|-------------|-----------------------------------|---------|----------|---------|
+| [position](#position)    | Position of sound location for a particular axis | −22.5  | 1...3 | – |
+| width       | Horizontal extent                 | 45      | 0 or 1   | 0.0     |
+| height      | Vertical extent                   | 20      | 0 or 1   | 0.0     |
+| depth       | Distance extent                   | 0.2     | 0 or 1   | 0.0     |
+| [objectDivergence](#objectdivergence) | Adjusts the balance between the object’s specified position and two other positions specified by the azimuthRange value (symmetrical on both sides of the object at the object’s position +/– azimuthRange). A value of 0 for the objectDivergence means no divergence. | 0.5 | 0 or 1 | 0.0 | 
+| [zoneExclusion](#zoneexclusion) | Indicates which speaker/room zones the object should not be rendered through. |  | 0 or 1 | |
+| cartesian   | Specifies coordinate system, if the flag is set to 1 the Cartesian coordinates and otherwise spherical coordinates are used. | 1 | 0 or 1 | 0 |
+| [diffuse](parameters/diffuse.md)     |  Describes the diffuseness of an audioObject (if it is diffuse or direct sound) | 0.5 | 0 or 1 | 0.0 |
+| [channelLock](#channellock) | If set to 1 a renderer can lock the object to the nearest channel or speaker, rather than normal rendering. If one or more speakers exist in the defined sphere or on its surface, the object snaps to the nearest speaker. | 1 | 0 or 1 | 0 |
+| screenRef | Indicates whether the object is screen-related (flag is equal to 1) or not (flag is equal to 0) | 1 | 0 or 1 | 0 |
 
-| Sub-element | Attribute              | Description                       | Units                        | Example | Quantity | Default |
-|-------------|------------------------|-----------------------------------|------------------------------|---------|----------|---------|
-| position    | coordinate=“azimuth”   | azimuth “theta” of sound location | Degrees (−180 ≤ theta ≤ 180) | −22.5   | 1        | –       |
-| position    | coordinate=“elevation” | elevation “phi” of sound location | Degrees (−90 ≤ phi ≤ 90)     | 5.0     | 1        | –       |
-| position    | coordinate=“distance”  | distance “r” from origin          | abs(r)                       | 0.9     | 0 or 1   | 1.0     |
-| width       | –                      | horizontal extent                 | Degrees                      | 45      | 0 or 1   | 0.0     |
-| height      | –                      | vertical extent                   | Degrees                      | 20      | 0 or 1   | 0.0     |
-| depth       | –                      | distance extent                   | Ratio                        | 0.2     | 0 or 1   | 0.0     |
+#### position
 
-| Sub-element | objectDivergence                                                     |
-|-------------|----------------------------------------------------------------------|
-| Attribute   | azimuthRange                                                         |
-| Description | Adjusts the balance between the object’s specified position and two other positions specified by the azimuthRange value (symmetrical on both sides of the object at the object’s position +/– azimuthRange). A value of 0 for the objectDivergence means no divergence. |
-| Units       | 0 to 1.0 for objectDivergence, 0.0 to 180.0 (angle) for azimuthRange |
-| Example     | 0.5 (objectDivergence), 60.0 (azimuthRange)                          |
-| Quantity    | 0 or 1                                                               |
-| Default     | 0.0 (objectDivergence), 45.0 (azimuthRange)                          |
+##### For polar coordinates 
 
-| Sub-element | zoneExclusion                                                                 |
-|-------------|-------------------------------------------------------------------------------|
-| Description | Indicates which speaker/room zones the object should not be rendered through. |
-| Sub-element | zone                                                                          |
+| Attribute	| Value	| Description | Required | Units for position sub-element value |
+|-----------|-------|-------------|----------|--------------------------------|
+| coordinate | azimuth | Defining the azimuth of sound location | Yes | Degrees |
+| coordinate | elevation | Defining the elevation of sound location | No | Degrees |
+| coordinate | distance | Defining the distance of sound location | No | Normalised to 1 |
 
-| Sub-sub-element | zone _(Polar)_                                                                                                                                                     |
-|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Attributes      | minElevation, maxElevation, minAzimuth, maxAzimuth                                                                                                                 |
-| Description     | Specifies the circular projection onto the sphere for spherical coordinates. Multiple zone elements can be used to specify more complex exclusion shapes.          |
-| Units           | -180 to 180 float for the spherical azimuth attribute and –90 to 90 float for the spherical elevation attribute. String for a label to describe the exclusion zone |
-| Example         | maxElevation=30, minElevation=-30, minAzimuth=-30, maxAzimuth=30. “Centre front"                                                                                   |
-| Quantity        | 1..*                                                                                                                                                               |
+##### For Cartesian coordinates
 
-#### For Cartesian coordinates
+| Attribute	| Value	| Description | Required | Units for position sub-element value |
+|-----------|-------|-------------|----------|--------------------------------|
+| coordinate | X | Defining the X axis of sound location | Yes | Relative units |
+| coordinate | Y | Defining the Y axis of sound location | Yes | Relative units |
+| coordinate | Z | Defining the Z axis of sound location | No | Relative units |
 
-| Sub-element | Attribute      | Description          | Units            | Example | Quantity | Default |
-|-------------|----------------|----------------------|------------------|---------|----------|---------|
-| position    | coordinate=“X” | left/right dimension | Normalized Units | −0.2    | 1        | -       |
-| position    | coordinate=“Y” | back/front dimension | Normalized Units | 0.1     | 1        | -       |
-| position    | coordinate=“Z” | bottom/top dimension | Normalized Units | −0.5    | 0 or 1   | 0.0     |
-| width       | -              | X-width              | Normalized Units | 0.03    | 0 or 1   | 0.0     |
-| depth       | -              | Y-width              | Normalized Units | 0.05    | 0 or 1   | 0.0     |
-| height      | -              | Z-width              | Normalized Units | 0.07    | 0 or 1   | 0.0     |
+#### objectDivergence
 
-| Sub-element | objectDivergence                                              |
-|-------------|---------------------------------------------------------------|
-| Attribute   | positionRange                                                 |
-| Description | Adjusts the balance between the object’s specified position and two other positions specified by the positionRange value (symmetrical on both sides of the object at the object’s position +/– positionRange along the X-axis). A value of 0 for the objectDivergence means no divergence. |
-| Units       | 0.0 to 1.0 for objectDivergence, 0.0 to 1.0 for positionRange |
-| Example     | 0.5 (objectDivergence), 0.25 (positionRange)                  |
-| Quantity    | 0 or 1                                                        |
-| Default     | 0.0 (objectDivergence), 0.0 (positionRange)                   |
+More details about the `objectDivergence` parameter [here](parameters/object_divergence.md).
 
-| Sub-element | zoneExclusion |
-|-------------|-------------------------------------------------------------------------------|
-| Description | Indicates which speaker/room zones the object should not be rendered through. |
-| Sub-element | zone |
+##### For polar coordinates 
 
-| Sub-sub-element | zone _(Cartesian)_                                                                                |
-|-----------------|---------------------------------------------------------------------------------------------------|
-| Attributes      | minX, maxX, minY, maxY, minZ, maxZ                                                                |
-| Description     | Specifies the corner points of a cuboid in the 3D space that will be excluded from rendering for Cartesian coordinates. Multiple zone elements can be used to specify more complex exclusion shapes. |
-| Units           | –1.0 to 1.0 float for each Cartesian attribute. String for a label to describe the exclusion zone |
-| Example         | minX=–1.0, maxX=1.0, minY=–1.0, maxY=0.0, minZ=–1.0, maxZ=1.0, “Rear half”                        |
-| Quantity        | 1..*                                                                                              |
+| Attribute	| Value	| Description | Required | Units | Default | 
+|-----------|-------|-------------|----------|-------|---------|
+| azimiuthRange | angle | Azimuth angle of divergence. | No | Degrees (0 to 180.0) | 45.0 |
 
-#### For all coordinate systems
+##### For Cartesian coordinates
 
-| Sub-element | cartesian                                                                                                                    |
-|-------------|------------------------------------------------------------------------------------------------------------------------------|
-| Description | Specifies coordinate system, if the flag is set to 1 the Cartesian coordinates and otherwise spherical coordinates are used. |
-| Units       | 1/0 flag                                                                                                                     |
-| Example     | 1                                                                                                                            |
-| Quantity    | 0 or 1                                                                                                                       |
-| Default     | 0                                                                                                                            |
+| Attribute	| Value	| Description | Required | Units | Default | 
+|-----------|-------|-------------|----------|-------|---------|
+| positionRange | distance | Distance of divergence | No | Relative distance (0 to 1.0) | 0.0 |
 
-| Sub-element | gain                                     |
-|-------------|------------------------------------------|
-| Description | Apply a gain to the audio in the object. |
-| Units       | linear gain value                        |
-| Example     | 0.5                                      |
-| Quantity    | 0 or 1                                   |
-| Default     | 1.0                                      |
+#### zoneExclusion
 
-| Sub-element | diffuse                                                                        |
-|-------------|--------------------------------------------------------------------------------|
-| Description | Describes the diffuseness of an audioObject (if it is diffuse or direct sound) |
-| Units       | 1/0 flag                                                                       |
-| Example     | 0.5                                                                            |
-| Quantity    | 0 or 1                                                                         |
-| Default     | 0                                                                              |
+More details about the `zoneExclusion` parameter [here](parameters/zone_exclusion.md).
 
-| Sub-element | channelLock                              |
-|-------------|------------------------------------------|
-| Attribute   | maxDistance                              |
-| Description | If set to 1 a renderer can lock the object to the nearest channel or speaker, rather than normal rendering. The optional maxDistance attribute defines the radius of a sphere around the object’s position. If one or more speakers exist in the defined sphere or on its surface, the object snaps to the nearest speaker. If maxDistance is undefined, a default value of infinity is assumed, meaning that the object should snap to the nearest of all speakers (unconditioned channelLock). |
-| Units       | 1/0 flag                                 |
-| Example     | 1 (channel Lock), 0.1 (maxDistance)      |
-| Quantity    | 0 or 1                                   |
-| Default     | 0 (channel Lock), infinity (maxDistance) |
+##### For polar coordinates 
 
+| Sub-element | Description                       | Example | Quantity | Default |
+|-------------|-----------------------------------|---------|----------|---------|
+| zone        | Specifies the circular projection onto the sphere for spherical coordinates. Multiple zone elements can be used to specify more complex exclusion shapes. | | 1...* | | 
 
-| Sub-element | jumpPosition                                                      |
-|-------------|-------------------------------------------------------------------|
-| Attribute   | interpolationLength                                               |
-| Description | If jumpPosition is set to 1 the position will change instantly from the previous block’s position. If set to 0 then interpolation of the position will take the entire length of the block. If the interpolationLength attribute is used, and the jumpPosition value is 1, then the interpolation will take as long as the specified value. The interpolation length should be shorter or equal than the block’s duration. |
-| Units       | 1/0 flag for jumpPosition, seconds (5d.p) for interpolationLength |
-| Example     | 1 (jumpPosition), 0.05125 (interpolationLength)                   |
-| Quantity    | 0 or 1                                                            |
-| Default     | 0 for jumpPosition                                                |
+##### For Cartesian coordinates
 
-| Sub-element | screenRef                                                                                       |
-|-------------|-------------------------------------------------------------------------------------------------|
-| Description | Indicates whether the object is screen-related (flag is equal to 1) or not (flag is equal to 0) |
-| Units       | 1/0 flag                                                                                        |
-| Example     | 0                                                                                               |
-| Quantity    | 0 or 1                                                                                          |
-| Default     | 0                                                                                               |
+| Sub-element | Description                       | Example | Quantity | Default |
+|-------------|-----------------------------------|---------|----------|---------|
+| zone        | Specifies the corner points of a cuboid in the 3D space that will be excluded from rendering for Cartesian coordinates. Multiple zone elements can be used to specify more complex exclusion shapes. | | 1...* | |
 
-| Sub-element | importance               |
-|-------------|--------------------------|
-| Description | Importance of an object. |
-| Units       | 0 to 10                  |
-| Example     | 10                       |
-| Quantity    | 0 or 1                   |
-| Default     | 10                       |
+##### zone
+
+##### For polar coordinates 
+
+| Attribute	| Description | Required | Units | Default | 
+|-----------|-------------|----------|-------|---------|
+| minAzimuth | Minimum azimuth | Yes | Degrees | |
+| maxAzimuth | Maximum azimuth | Yes | Degrees | |
+| minElevation | Minimum elevation | Yes | Degrees | |
+| maxElevation | Maximum elevation | Yes | Degrees | |
+
+##### For Cartesian coordinates
+
+| Attribute	| Description | Required | Units | Default | 
+|-----------|-------------|----------|-------|---------|
+| minX | Minimum X | Yes | Relative distance | |
+| maxX | Maximum X | Yes | Relative distance | |
+| minY | Minimum Y | Yes | Relative distance | |
+| maxY | Maximum Y | Yes | Relative distance | |
+| minZ | Minimum Z | Yes | Relative distance | |
+| maxZ | Maximum Z | Yes | Relative distance | |
+
+#### channelLock
+
+More details about the `channelLock` parameter [here](parameters/channel_lock.md).
+
+| Attribute	| Description | Required | Units | Default | 
+|-----------|-------------|----------|-------|---------|
+| maxDistance | Defines the radius of a sphere around the object’s position. If one or more speakers exist in the defined sphere or on its surface, the object snaps to the nearest speaker. If maxDistance is undefined, a default value of infinity is assumed, meaning that the object should snap to the nearest of all speakers (unconditioned channelLock). | No | Relative distance | Infinity |
+

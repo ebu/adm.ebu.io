@@ -23,6 +23,8 @@ The specifications for all of the ADM elements and parameters are found here.
   * [**audioStreamFormat**](adm_elements/audio_stream_format.md)
   * [**audioTrackFormat**](adm_elements/audio_track_format.md)
   * [**audioTrackUID**](adm_elements/audio_track_uid.md)
+  * [**profileList**](adm_elements/profile_list.md)
+  * [**tagList**](adm_elements/tag_list.md)
   * **Shared Parameters:**
     - [*loudnessMetadata*](adm_elements/loudness_metadata.md)
     - [*typeDefinitions*](adm_elements/type_definitions.md)

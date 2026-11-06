@@ -4,7 +4,7 @@
 
 The `audioTrackFormat` element corresponds to a single set of samples or data in a single track in a storage medium. It is used to describe what format the data is in, allowing a renderer to decode the signal correctly. It is referred from the [`audioStreamFormat`](audio_stream_format.md) element, which is used to identify the combination of tracks required to decode the track data successfully.
 
-For PCM audio an [`audioStreamFormat`](audio_stream_format.md) will refer to a single `audioTrackFormat` and so the two elements are effectively describing the same thing. For coded audio, multiple `audioTrackFormat`s will have to be combined in a single [`audioStreamFormat`](audio_stream_format.md) to generate decodable data.
+For PCM audio an [`audioStreamFormat`](audio_stream_format.md) will refer to a single `audioTrackFormat` and so the two elements are effectively describing the same thing. In this case, the `audioTrackFormat` and the [`audioStreamFormat`](audio_stream_format.md) should be omitted. Then the [`audioTrackUID`](audio_track_uid.md) shall refer to the corresponding `audioChannelFormat`. For coded audio, multiple `audioTrackFormat`s will have to be combined in a single [`audioStreamFormat`](audio_stream_format.md) to generate decodable data.
 
 Software that parses the model can start from either `audioTrackFormat` or [`audioStreamFormat`](audio_stream_format.md). To allow for this flexibility `audioTrackFormat` can also refer back to the [`audioStreamFormat`](audio_stream_format.md). However, it is a strict requirement that if this reference is used, the `audioTrackFormat` must refer to the same [`audioStreamFormat`](audio_stream_format.md) that is referring back to it.
 
