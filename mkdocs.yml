@@ -25,6 +25,7 @@ nav:
   - Home: 'index.md'
   - Introduction:
     - What is the ADM?: 'background/what_is_the_adm.md'
+    - ADM Milestones: 'background/adm-milestones.md'
     - Types of Audio: 'background/audio_types.md'
     - Rendering: 'background/rendering.md'
   - ADM Guidelines:
@@ -92,6 +93,8 @@ nav:
         - Overview: 'best_practices/overview.md'
         - MXF & IMF Best Practice: 'best_practices/mxf_imf.md'
         - ADM Profiles & Levels Labels: 'best_practices/adm_profiles_levels_table.html'
+        - ADM Content Kind Attributes and MCA Properties: 'best_practices/adm-attributes-mca-properties.md'
+        - ADM Content Kind Sample code: 'best_practices/ADM4Legacy-4aP-Sample-axml.md'
   - ADM Migration Path:
         - Overview: 'tech/migration.md'
         - Step 1 - ADM4Legacy: 'tech/ADM4Legacy-OnDemand.md'

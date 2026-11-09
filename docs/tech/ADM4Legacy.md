@@ -1,4 +1,4 @@
-# ADM*4*Legacy - A *Stage 1* Workflows for OnDemand
+# ADM*4*Legacy - *Stage 1* Workflows
 
 ADM can enhance "legacy" MXF assets containing channel-based mixes defined in track-allocation tables such as [EBU R123](https://tech.ebu.ch/publications/r123), [ITU-R BS.2102](https://www.itu.int/rec/R-REC-BS.2102/en) or [ARD/ZDF/ORF's Delivery Specifications TPR](https://www.ard.de/die-ard/b2b/tpr-2025-technische-produktionsrichtlinien-zur-herstellung-von-medienproduktionen-100.pdf)
 Instead of applying sidecar-files (e.g. the outdated BMF - Broadcast Media ExchangeFormat) or even paper sheets (MBK - Medienbegleitkarte et. al.), ADM wrapped in MXF according to [SMPTE ST 2131](https://pub.smpte.org/doc/st2131/) can carry all necessary information about audio formats (2.0, 5.1), content type (Complete Main, IT/ME...), loudness metadata etc. within the MXF essence.    
@@ -10,3 +10,11 @@ This [**STEP 1**](migration.md) workflow show the improvements that can be gaine
 
 
 ![](img/ADM4Legacy-MXF-OnDemand-Multi-Audio.png)
+
+## **<span style='color: blue;font-size:1.0em;'>ADM*4*Legacy** Tool
+
+*ARD-HR* has developed a tool to enhance conventional MXF OP1A assets with ADM metadata according to [SMPTE ST 2131](https://pub.smpte.org/doc/st2131/). Based upon [**bmx**](https://github.com/ebu/bmx) and [ffmpeg](https://ffmpeg.org), this GUI tool clearly demonstrates the benefits to be gained.     
+
+**<span style='color: blue;font-size:1.0em;'>ADM*4*Legacy** applies the best-practices described on the [MXF & IMF Best Practice](../best_practices/mxf_imf.md) and [ADM Attributes and MCA Properties](../best_practices/adm-attributes-mca-properties.md)
+
+![](img/ADM4LegacyTool.png)    

@@ -35,3 +35,6 @@ Chair Andy Quested is flanked by Virginie Allflatt (Marquise Technologies) and P
 
 * [**Workshop Digital Broadcast 2026**](https://www.idmt.fraunhofer.de/de/events_and_exhibitions/wsdb.html) 22-23/09/2026 Erfurt
        Presentation on ADM/S-ADM Broadcast Implementation from BR
+
+
+* [MXF-PLUGFEST](

@@ -82,7 +82,7 @@ The approaches to MCA for ADM and for S-ADM are designed to be identical whereve
 
 ### Best Practice
 
-**In an MXF file, always include Multichannel Audio Labeling (MCA) for every set of ADM/S-ADM metadata.**
+**In an MXF file, always include Multichannel Audio Labelling (MCA) for every set of ADM/S-ADM metadata.**
 
 **Always comply with the MCA provisions of IMF ADM/S-ADM "Operational Mode A" unless there are special requirements. In summary, this means:**
 
@@ -104,6 +104,8 @@ The approaches to MCA for ADM and for S-ADM are designed to be identical whereve
 | `ADMAudioProgrammeID_ST2131` | Equal to the `audioProgrammeID` attribute of the `audioProgramme` |
 
 * An example MXF file containing MCA conforming to this Best Practice is [published along with SMPTE ST 2067-204](https://pub.smpte.org/doc/st2067-204/20260527-pub/st2067-204-20260527-pub.zip)
+
+* In this repo, the [ADM Attributes and MCA Properties](adm-attributes-mca-properties.md) page provides more details how to  describe audio composites accordingly with *MCA Properties* and *ADM Attributes*.
 
 
 **S-ADM: Populate each `MGASoundfieldGroupLabelSubDescriptor` to describe the associated `audioProgramme` as follows (where all the listed properties shall be present unless otherwise stated):**
