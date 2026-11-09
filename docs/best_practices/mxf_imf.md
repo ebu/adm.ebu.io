@@ -41,10 +41,19 @@ Both ADM and S-ADM MXF mappings use the same Labels. However, each MXF mapping s
 
 * In the MXF signaling, use one Label for each `profile` sub-element of the ADM `profileList` element
 * Choose the suitable Labels from [this table of Labels](./adm_profiles_levels_table.html)
+* Labels are chosen by matching the values in the Label "Definition" with the values in each ADM `profile` sub-element
 
 **Otherwise, if the ADM/S-ADM conforms to a defined Profile and Level but the ADM/S-ADM does not contain the `profileList` element:**
 
 * Choose one or more suitable Labels from [this table of Labels](./adm_profiles_levels_table.html) in line with any guidance provided by the publisher of the ADM/S-ADM Profile
+  * Dolby Atmos Master ADM Profile
+    * ADM metadata conforming to this profile does not directly signal the profile
+    * Conformance with this profile might be determined by, for example: using knowledge of the tool used to produce the ADM metadata; or inspection of the ADM metadata including which elements are present and how they are named.
+    * Use the v1.1 Label `Dolby_Atmos_ADM_V1_1_L0` and not the v1.0 Label `Dolby_Atmos_ADM_V1_L0` unless additional information or instructions are received. Note: there is no guaranteed way to determine which of the two versions of the profile ADM metadata conforms to and in many instances it is compliant with both.
+    * Refer to [documentation for the profile](https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification)
+  * MPEG-H ADM Profile
+    * ADM metadata conforming to this profile signals the profile(s) in the `audioFormatCustomSet` element
+    * Refer to [documentation for the profile](https://www.iis.fraunhofer.de/en/ff/amm/dl/whitepapers/adm-profile.html)
 
 **Finally, if the ADM/S-ADM is just "generic" ADM/S-ADM and is not constrained by any defined Profile or Level:**
 
@@ -119,3 +128,4 @@ Notes:
 * Additional automatically populated properties will also be present in each of these Sub-Descriptors. Additional manually populated properties might also be permitted.
 * Although "Operational Mode A" is defined as part of the IMF standards, take this approach even for "standalone" MXF files.
 * "Special requirements" could include, for example, the need to label channel-based ADM/S-ADM content using the same Labels as audio in regular IMF Audio Track Files.
+

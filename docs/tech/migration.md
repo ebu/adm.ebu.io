@@ -54,6 +54,5 @@ Ultimate move to end-to-end ADM-NGA production and delivery chain.
      -> Immersive Reproduction
      -> Loudness Adaptability et. al.    
 
-->[ADM2NGA](ADM2NGA.md) provides more details of this stage.
-
+->[ADM2NGA](ADM2NGA.md) provides more details of this stage.    
 ->The [ADM Studio](ADM_studio.md) is a paradigmatic implementation of this stage.

@@ -16,8 +16,8 @@
 * [**EAR - EBU ADM Renderer**](https://github.com/ebu/ebu_adm_renderer)    
    → the reference implementation of [EBU TECH 3388 ADM Renderer](https://tech.ebu.ch/publications/tech3388)    
    → renders ADM to channel-based layouts defined in [ITU-R BS.2051](https://www.itu.int/rec/R-REC-BS.2051/en)         
-   → contains also `ear-utils`, some simple Command Line tools to extract and manipulate ADM data from BWF   
-   → [EAR Documentation](https://ear.readthedocs.io) provides in depth background    
+   → contains also `ear-utils`, some simple Command Line tools to extract and manipulate ADM data from BWF
+
 
 * [**BEAR - Binaural EBU ADM Renderer**](https://github.com/ebu/bear)    
    → an *EAR*-based binaural renderer for ADM as specified in [EBU TECH 3396](https://tech.ebu.ch/publications/tech3396)    
@@ -41,7 +41,7 @@
 
 ## Wrapping ADM in MXF and IMF
 
-* [**bmx tool for MXF**](https://github.com/ebu/bmx)    
+* [**BMX tool for MXF**](https://github.com/ebu/bmx)    
   → Formerly developed by [BBC R&D](https://github.com/bbc/bmx)
   → Open Source - the 'Swiss Army Knife' for MXF in broadcast workflows
   → allows to wrap ADM [SMPTE ST 2067-204](https://pub.smpte.org/doc/st2067-204/) (for IMF [SMPTE ST 2067](https://www.smpte.org/standards/st2067)) and [SMPTE ST 2131](https://pub.smpte.org/doc/st2131/) (for MXF)

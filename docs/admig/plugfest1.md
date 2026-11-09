@@ -74,17 +74,17 @@ The steep learning curve lead to clarify previous misconceptions and helped to f
     This process requires the translation of ADM/S-ADM profile definitions into SMPTE ULs.
     SMPTE ULs are available for inspection via the SMPTE Registry tools.
     While this may be an easy task for specialists, the exact correspondence may not be obvious for everyone.
-
+    
     Action: Write-up and publish the advice (above) through the ADM-IG; the participants recommend the creation of a simplified lookup table and published through ADM-IG.
-
+    
     -> ACTION COMPLETED: see [MXF & IMF Best Practice](../best_practices/mxf_imf.md)
 
   - **MXF: Multi-Channel Audio (MCA) labeling approach**
 
     Create one MCA "MGA/ADM Soundfield Group" for each audioProgramme element in the (S-)ADM metadata.
-
+    
     Action: Write-up and publish the advice (above) through ADM-IG.
-
+    
     -> ACTION COMPLETED: see [MXF & IMF Best Practice](../best_practices/mxf_imf.md)
 
   - **Audio Programme Name & Labels**
@@ -92,13 +92,11 @@ The steep learning curve lead to clarify previous misconceptions and helped to f
     Audio programme labels are optional. They are typically used by downstream encoders to produce selectable configurations for consumer devices where the programme name can be localised.
     Audio programme names are typically used by professional tools only and do not reach the consumer devices, unless audio programme labels are absent.
     It is expected that the audio programme names are unique in the ADM/S-ADM metadata, although they are not strictly speaking used by the ADM renderer to influence processing.
-
+    
     The group recommends the verification of audio programme uniqueness and it enforcement during ADM metadata creation. A QC test should be defined to detect violations of this recommendation.
 
   - **Dialogue Content Kind**
     [ITU-R BS.2076-3](https://www.itu.int/rec/R-REC-BS.2076), section 5.7.3, table A1-35 defines a number of possible combinations for the attributes and value of the dialogue element. Some combinations are similar but not duplicates.
     However in the definition of delivery specifications, it is not always obvious to the reader which combinations must be selected (e.g. for audio description).
-
+    
     It is highly desirable to define the preferred combinations for practical use cases and include the recommended combinations in delivery specifications to avoid content rejection during ingest or QC failure.
-
-    -> ACTION COMPLETED: see [DM Attributes and MCA Labels](../best_practices/ADM-MCA-Labels.md)

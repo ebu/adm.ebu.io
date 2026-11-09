@@ -1,4 +1,4 @@
-<!-- This is the default landing page -->
+<!-- This is the defaukt landing page -->
 
 <!--# The Audio Definition Model-->
 #
