@@ -97,7 +97,7 @@ nav:
         - ADM Content Kind Sample code: 'best_practices/ADM4Legacy-4aP-Sample-axml.md'
   - ADM Migration Path:
         - Overview: 'tech/migration.md'
-        - Step 1 - ADM4Legacy: 'tech/ADM4Legacy-OnDemand.md'
+        - Step 1 - ADM4Legacy: 'tech/ADM4Legacy.md'
         - Step 2 - ADM2Legacy: 'tech/ADM2Legacy.md'
         - Step 3 - ADM4NGA: 'tech/ADM2NGA.md'
         - ADM Studio: 'tech/ADM_studio.md'
