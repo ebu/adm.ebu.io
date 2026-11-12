@@ -42,44 +42,49 @@ In addition to the common [`audioBlockFormat` attributes](audio_channel_format.m
 
 ### Sub-elements
 
-#### Polar coordinates
+| Element | Description	   | Example | Quantity |
+|---------|----------------|---------|----------|
+| speakerLabel | A reference to the label of the speaker position | M-30 | 0...* |
+| cartesian | Specifies coordinate system, if the flag is set to 1 the Cartesian coordinate system is used, otherwise spherical coordinates are used. Default of 0 (spherical) | 1 | 0 or 1 |
+| [position](#position) | Location of sound | −30.0 | 1...6 |
 
-| Element	| Attributes | Description	   | Units       | Example | Quantity |
-|---------|------------|-----------------|-------------|---------|----------|
-| speakerLabel | | A reference to the label of the speaker position |	–	| M-30 | 0...* |
-| position | coordinate=“azimuth” | Exact azimuth location of sound | Degrees | −30.0 | 1 |
-| position | coordinate=“azimuth”<br/>bound="max"	| Max. azimuth location of sound | Degrees | −22.5 | 0 or 1 |
-| position | coordinate=“azimuth”<br/>bound="min"	| Min. azimuth location of sound | Degrees | −30.0 | 0 or 1 |
-| position | coordinate=“elevation”	| Exact elevation location of sound | Degrees | 0.0 | 1 |
-| position | coordinate=“elevation”<br/>bound="max" | Max. elevation location of sound | Degrees | 5.0 | 0 or 1 |
-| position | coordinate=“elevation”<br/>bound="min" | Min. elevation location of sound | Degrees | -5.0 | 0 or 1 |
-| position | coordinate=“distance” | Exact normalised distance from origin | Normalised to 1 | 1.0 | 0 or 1 |
-| position | coordinate=“distance”<br/>bound="max" | Max. normalised distance from origin | Normalised to 1 | 1.0 | 0 or 1 |
-| position | coordinate=“distance”<br/>bound="min" | Min. normalised distance from origin | Normalised to 1 | 0.8 | 0 or 1 |
+#### position
+
+##### For polar coordinates 
+
+| Attribute	| Value	| Description | Required | Units for position sub-element value |
+|-----------|-------|-------------|----------|--------------------------------|
+| coordinate | azimuth | Defining the azimuth of position | Yes* | Degrees |
+| coordinate | elevation | Defining the elevation of position | No* | Degrees |
+| coordinate | distance | Defining the distance of position | No* | Normalised to 1 |
+| bound | max | Maximum range of position value | No | - |
+| bound | min | Minimum range of position value | No | - |
+| [screenEdgeLock](#screenedgelock-attribute) | left, right, top, bottom  | Defines a speaker position at a screen edge	| No | - |
+
+If no `bound` attribute is used the the position is the exact value specified.
+
+*If spherical coordindates are used then the `azimuth` coordinate must be used, but the other coordinates are optional. `elevation` has a default of 0 degrees, and `distance` has a default of 1.
 
 The distance measure is normalised, as absolute speaker distances from the origin are rarely used, but an absolute reference distance is available in `audioPackFormat`.
 
-#### Cartesian coordinates
+##### For Cartesian coordinates 
 
-The coordinates are usually based on the polar system, as this is the common way of describing channel and speaker locations. However it is also possible to use the Cartesian coordinate system by using different coordinate attributes (‘X’, ‘Y’ and ‘Z’).
+| Attribute	| Value	| Description | Required | Units for position sub-element value |
+|-----------|-------|-------------|----------|--------------------------------|
+| coordinate | X | Defining the X axis of position | Yes* | Relative units (-1.0 to 1.0) |
+| coordinate | Y | Defining the Y axis of position | Yes* | Relative units (-1.0 to 1.0)  |
+| coordinate | Z | Defining the Z axis of position | No* | Relative units (-1.0 to 1.0)  |
+| bound | max | Maximum range of position value | No | - |
+| bound | min | Minimum range of position value | No | - |
+| [screenEdgeLock](#screenedgelock-attribute) | left, right, top, bottom  | Defines a speaker position at a screen edge	| No | - |
 
-| Element	| Attributes | Description	   | Units       | Example | Quantity |
-|---------|------------|-----------------|-------------|---------|----------|
-| speakerLabel | | A reference to the label of the speaker position |	–	| M-30 | 0...* |
-| position | coordinate=“X”| Exact X left to right location of sound | Normalised Units | -0.2 | 1 |
-| position | coordinate=“X”<br/>bound="max" |	Max. X left to right location of sound | Normalised Units | -0.1 | 0 or 1 |
-| position | coordinate=“X”<br/>bound="min"	| Min. X left to right location of sound | Normalised Units | -0.3 | 0 or 1 |
-| position | coordinate=“Y”| Exact Y front to back location of sound | Normalised Units | 0.1 | 1 |
-| position | coordinate=“Y”<br/>bound="max" | Max. Y front to back location of sound | Normalised Units | 0.2 | 0 or 1 |
-| position | coordinate=“Y”<br/>bound="min" | Min. Y front to back location of sound | Normalised Units | 0.0 | 0 or 1 |
-| position | coordinate=“Z”| Exact Z top to bottom location of sound | Normalised Units | -0.5 | 1 |
-| position | coordinate=“Z”<br/>bound="max" | Max. Z top to bottom location of sound | Normalised Units | -0.4 | 0 or 1 |
-| position | coordinate=“Z”<br/>bound="min" | Min. Z top to bottom location of sound | Normalised Units | -0.6 | 0 or 1 |
-| position | [screenEdgeLock](#screenedgelock-attribute) | Defines a speaker position at a screen edge	| left, right, top, bottom | left	| 0 … 2 |
+If no `bound` attribute is used the the position is the exact value specified.
+
+*If Cartesian coordindates are used then the `X` and `Y` coordinates must be used, but the `Z` coordinate is optional. `Z` has a default of 0.
 
 #### screenEdgeLock attribute
 
-The `screenEdgeLock` attribute allows a speaker to be positioned on the edge of the screen. The attribute can be used in combination with the coordinate=“elevation” and/or the coordinate=“azimuth” attribute and it is set to a string stating at which edge of the screen to the speaker position should be assumed to be (if screen-size information is available), so it is either “left”, “right”, “top”, “bottom”. The coordinate attribute must still be included so it is clear which dimension is being set, and to provide an alternative position should the screen not exist or no screen-size information be available.
+The `screenEdgeLock` attribute allows a speaker to be positioned on the edge of the screen. The attribute can be used in combination with the `coordinate=“elevation”` and/or the `coordinate=“azimuth”` attribute and it is set to a string stating at which edge of the screen to the speaker position should be assumed to be (if screen-size information is available), so it is either “left”, “right”, “top”, “bottom”. The `coordinate` attribute must still be included so it is clear which dimension is being set, and to provide an alternative position should the screen not exist or no screen-size information be available.
 
 The example XML code below illustrates how a speaker positioned on the right edge of the screen can be defined (with an alternative position of −29.0 degrees should the screen not exist).
 
@@ -92,7 +97,7 @@ The example XML code below illustrates how a speaker positioned on the right edg
 </audioBlockFormat>
 ```
 
-If two `screenEdgeLock` positions are required (for corners of the screen) then the two position ADM elements must be used as shown in the example below. This is because XML does not allow multiple attributes of the same name within the same element.
+If two `screenEdgeLock` positions are required (for corners of the screen) then the two `position` elements must be used as shown in the example below. This is because XML does not allow multiple attributes of the same name within the same element.
 
 ```xml
   <position coordinate="azimuth" screenEdgeLock=”right”>-29.0</position>
